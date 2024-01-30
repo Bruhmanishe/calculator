@@ -135,21 +135,23 @@ function plusMinus() {
     let number = parseInt(screenOne.getAttribute("value"), 10);
     console.log(number);
     if (number >= 0) {
-      let finalNum = number * -1;
-      screenOne.setAttribute("value", finalNum);
-    } else if (numberOne < 0) {
-      let finalNum = number * -1;
-      screenOne.setAttribute("value", finalNum);
+      let finalNum = Math.floor((number = -number));
+      screenOne.setAttribute("value", `${finalNum}`);
+    } else if (number < 0) {
+      let finalNum = (number = -number);
+      screenOne.setAttribute("value", `${finalNum}`);
     }
   } else if (screenTwo.hasAttribute("firstStrokeBlocked")) {
     console.log("Work");
     let number = parseInt(screenThree.getAttribute("value"), 10);
     if (number >= 0) {
-      let finalNum = number * -1;
-      screenThree.setAttribute("value", finalNum);
-    } else if (numberOne < 0) {
-      let finalNum = number * -1;
-      screenThree.setAttribute("value", finalNum);
+      let finalNum = (number = -number);
+      screenThree.setAttribute("value", `${finalNum}`);
+      console.log("Worker");
+    } else if (number < 0) {
+      let finalNum = (number = -number);
+      screenThree.setAttribute("value", `${finalNum}`);
+      console.log("Workre");
     }
   }
 }
@@ -247,6 +249,7 @@ function equalTo() {
       element.removeEventListener("click", buttonSecondInput)
     );
     screenTwo.removeAttribute("divideIsHere");
+    screenTwo.removeAttribute("firstStrokeBlocked");
   } else if (screenTwo.hasAttribute("percentIsHere")) {
     let numberForCalcOne = Number(screenOne.getAttribute("value"));
     let numberForCalcTwo = Number(screenThree.getAttribute("value"));
@@ -281,17 +284,9 @@ function equalTo() {
       element.removeEventListener("click", buttonSecondInput)
     );
     screenTwo.removeAttribute("powerIsHere");
-  };
-  screenThree.setAttribute("value", "");
+  }
   screenTwo.removeAttribute("firstStrokeBlocked");
+  screenThree.setAttribute("value", "");
 }
 
 let equalButton = equal.addEventListener("click", equalTo);
-
-// buttonPlus.addEventListener("click", function plus() {
-//   numberOne.addEventListener("click", button);
-//   numberTwo.addEventListener("click", button);
-//   numberThree.addEventListener("click", button);
-//   screenTwo.setAttribute("value", "");
-//   buttonPlus.removeEventListener("click", plus);
-// });
