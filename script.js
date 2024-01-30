@@ -263,6 +263,7 @@ function equalTo() {
     buttons.forEach((element) =>
       element.removeEventListener("click", buttonSecondInput)
     );
+    screenTwo.removeAttribute("firstStrokeBlocked");
     screenTwo.removeAttribute("percentIsHere");
   } else if (screenTwo.hasAttribute("powerIsHere")) {
     let numberForCalcOne = Number(screenOne.getAttribute("value"));
@@ -281,6 +282,7 @@ function equalTo() {
       element.removeEventListener("click", buttonSecondInput)
     );
     screenTwo.removeAttribute("powerIsHere");
+    screenTwo.removeAttribute("firstStrokeBlocked");
   }
 
   screenThree.setAttribute("value", "");
