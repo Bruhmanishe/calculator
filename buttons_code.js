@@ -38,9 +38,13 @@ let buttonsCalc = [
 ];
 
 buttonsCalc.forEach((e) =>
-  e.addEventListener("click", () =>
-    screenTwo.setAttribute("firstStrokeBlocked", "")
-  )
+  e.addEventListener("click", function () {
+    if (!screenTwo.hasAttribute("firstStrokeBlocked")) {
+      screenTwo.setAttribute("firstStrokeBlocked", "");
+    } else if (screenTwo.hasAttribute("firstStrokeBlocked")) {
+      screenTwo.removeAttribute("firstStrokeBlocked");
+    }
+  })
 );
 
 let buttons = [
