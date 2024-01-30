@@ -281,9 +281,9 @@ function equalTo() {
       element.removeEventListener("click", buttonSecondInput)
     );
     screenTwo.removeAttribute("powerIsHere");
-  }
-screenTwo.removeAttribute("firstStrokeBlocked");
+  };
   screenThree.setAttribute("value", "");
+  screenTwo.removeAttribute("firstStrokeBlocked");
 }
 
 let equalButton = equal.addEventListener("click", equalTo);
